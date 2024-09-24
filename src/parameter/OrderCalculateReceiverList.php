@@ -4,6 +4,7 @@ namespace Liangal\Sansong\parameter;
 class OrderCalculateReceiverList extends Validate
 {
     use JsonSerialTrait;
+
     protected array $necessary = [
         'orderNo' => '平台流水号不能为空',
         'toAddress' => '收件地址不能为空',
@@ -25,12 +26,12 @@ class OrderCalculateReceiverList extends Validate
 
     //非必填
     public string $toAddressDetail = '';//收件详细地址:非必填
-    public string $remarks = ''	;//备注:非必填
+    public string $remarks = '';//备注:非必填
     public string $additionFee = '';//快速通道费:非必填 单位为分，能被100整除，最大值为10000，用于促进闪送员接单
     public int $orderingSourceType = 0;//物品来源:非必填 1-闪送,2-百度外卖,3-饿了么外卖,4-美团外卖,5-其他平台,6-京东到家,7-达达,8-饿百
     public string $orderingSourceNo = '';//物品来源流水号:非必填 orderingSourceType有值时必填
-    public string $goodsSizeId  = '';//蛋糕尺寸:非必填 当qualityDelivery为1，并且goodType为5时，必传。详见下方蛋糕尺寸枚举
-    public string $goodsPrice  = '';//投保金额:非必填
-    public string $qualityDelivery  = '';//尊享送服务:非必填
+    public string $goodsSizeId = '';//蛋糕尺寸:非必填 当qualityDelivery为1，并且goodType为5时，必传。详见下方蛋糕尺寸枚举
+    public string $goodsPrice = '';//投保金额:非必填
+    public string $qualityDelivery = '';//尊享送服务:非必填
     public int $insuranceFlag = 0;//是否投保:非必填
 }

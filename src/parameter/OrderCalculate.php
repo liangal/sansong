@@ -1,7 +1,10 @@
 <?php
+
 namespace Liangal\Sansong\parameter;
-class OrderCalculate extends Validate{
+class OrderCalculate extends Validate
+{
     use JsonSerialTrait;
+
     protected array $necessary = [
         'cityName' => '城市名称不能为空',
     ];

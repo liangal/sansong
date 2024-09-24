@@ -14,7 +14,7 @@ class Api extends Request
     public function getAuthUrl(): string
     {
         $redirect_uri = urlencode($this->getRedirectUri());
-        return $this->url."/auth?isAllStoreAuth=true&response_type=code&scope=shop_open_api&state=10583&client_id={$this->getClientID()}&redirect_uri={$redirect_uri}";
+        return $this->getUrl() . "/auth?isAllStoreAuth=true&response_type=code&scope=shop_open_api&state=10583&client_id={$this->getClientID()}&redirect_uri={$redirect_uri}";
     }
 
     /**
@@ -35,7 +35,7 @@ class Api extends Request
      * @return array
      * @throws Exception
      */
-    public function orderCalculate(array $params,array $senderData,array $receiverListData): array
+    public function orderCalculate(array $params, array $senderData, array $receiverListData): array
     {
         $sender = new OrderCalculateSender();
         $sender->check($senderData);
@@ -43,10 +43,10 @@ class Api extends Request
         $receiverList->check($receiverListData);
         $orderCalculate = new OrderCalculate();
         $orderCalculate->check($params);
-        $orderCalculate->sender =  $sender;
-        $orderCalculate->receiverList =  $receiverList;
+        $orderCalculate->sender = $sender;
+        $orderCalculate->receiverList = $receiverList;
         $data = $orderCalculate->jsonSerialize();
-        return $this->post('/openapi/merchants/v5/orderCalculate',$data);
+        return $this->post('/openapi/merchants/v5/orderCalculate', $data);
     }
 
     /**
@@ -57,7 +57,7 @@ class Api extends Request
     public function orderPlace(string $issOrderNo): array
     {
         $place = new OrderPlace();
-        $place->check(['issOrderNo'=>$issOrderNo]);
-        return $this->post('/openapi/merchants/v5/orderPlace',$place->jsonSerialize());
+        $place->check(['issOrderNo' => $issOrderNo]);
+        return $this->post('/openapi/merchants/v5/orderPlace', $place->jsonSerialize());
     }
 }

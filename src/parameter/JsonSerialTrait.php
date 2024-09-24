@@ -4,7 +4,7 @@ namespace Liangal\Sansong\parameter;
 
 trait JsonSerialTrait
 {
-    public function jsonSerialize():array
+    public function jsonSerialize(): array
     {
         $items = get_object_vars($this);
         unset($items['necessary']);

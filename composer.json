@@ -1,18 +1,19 @@
 {
-    "name": "liangal/sansong",
-    "description": "sansong",
-    "type": "library",
-    "autoload": {
-        "psr-4": {
-            "Liangal\\Sansong\\": "src/"
-        }
-    },
-    "authors": [
-        {
-            "name": "liangal"
-        }
-    ],
-    "require": {
-        "php": ">=7.4"
+  "name": "liangal/sansong",
+  "description": "sansong",
+  "type": "library",
+  "autoload": {
+    "psr-4": {
+      "Liangal\\Sansong\\": "src/"
     }
+  },
+  "authors": [
+    {
+      "name": "liangal"
+    }
+  ],
+  "require": {
+    "php": ">=7.4",
+    "ext-json": "*"
+  }
 }

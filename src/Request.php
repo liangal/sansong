@@ -6,25 +6,14 @@ class Request
 {
     use Config;
 
-    /**
-     * 测试链接
-     * @var string
-     */
-    protected string $url = 'http://open.s.bingex.com';
-    /**
-     * 生产链接
-     * @var string
-     */
-//    protected string $url = 'https://open.ishansong.com';
-
     protected function getUrlApi($api_url): string
     {
-        return $this->url.$api_url;
+        return $this->getUrl() . $api_url;
     }
 
     protected function getBaseParams(): array
     {
-        return  [
+        return [
             'clientId' => $this->getClientID(),
             'timestamp' => $this->getTimestamp(),
             'shopId' => $this->getShopID(),
@@ -64,11 +53,11 @@ class Request
      * @param mixed|array $options CURL的参数
      * @return array
      */
-    public function sendRequest(string $url,array $data = [], string $method = 'POST', $options = []): array
+    public function sendRequest(string $url, array $data = [], string $method = 'POST', $options = []): array
     {
 
         $params = $this->getBaseParams();
-        if($data){
+        if ($data) {
             $params['data'] = json_encode($data);
         }
         $sign = $this->getSign($data);
@@ -116,7 +105,8 @@ class Request
      * @param string $method 请求的方法
      * @return boolean TRUE
      */
-    public function sendAsyncRequest($url, $params = [],$method = 'POST'){
+    public function sendAsyncRequest($url, $params = [], $method = 'POST')
+    {
         $method = strtoupper($method);
         $method = $method == 'POST' ? 'POST' : 'GET';
         //构造传递的参数
@@ -167,7 +157,8 @@ class Request
      * @param bool $delaftersend
      * @param bool $exitaftersend
      */
-    public static function sendToBrowser($file,$delaftersend = true,$exitaftersend = true){
+    public static function sendToBrowser($file, $delaftersend = true, $exitaftersend = true)
+    {
         if (file_exists($file) && is_readable($file)) {
             header('Content-Description: File Transfer');
             header('Content-Type: application/octet-stream');

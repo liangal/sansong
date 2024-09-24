@@ -5,6 +5,7 @@ namespace Liangal\Sansong\parameter;
 class OrderCalculateSender extends Validate
 {
     use JsonSerialTrait;
+
     protected array $necessary = [
         'fromAddress' => '寄件地址不能为空',
         'fromSenderName' => '寄件人姓名不能为空',
