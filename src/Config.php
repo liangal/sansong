@@ -4,6 +4,10 @@ namespace Liangal\Sansong;
 
 trait Config
 {
+    /**
+     * 请求链接开关  1-测试，2-生产
+     * @var int
+     */
     protected int $urlType = 1;
     //Shop ID
     protected string $shopID;

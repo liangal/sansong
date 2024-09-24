@@ -6,6 +6,11 @@ class Request
 {
     use Config;
 
+    /**
+     * 获取请求链接
+     * @param $api_url
+     * @return string
+     */
     protected function getUrlApi($api_url): string
     {
         return $this->getUrl() . $api_url;

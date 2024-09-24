@@ -28,7 +28,7 @@ class Api extends Request
     }
 
     /**
-     *
+     * 订单股价
      * @param array $params 基础信息
      * @param array $senderData 寄送信息
      * @param array $receiverListData 收货信息
@@ -50,6 +50,7 @@ class Api extends Request
     }
 
     /**
+     * 订单提交
      * @param string $issOrderNo 订单号
      * @return array
      * @throws Exception
