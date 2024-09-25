@@ -5,7 +5,6 @@ $config = new Liangal\Sansong\Api([
     'shopID' => '20000000000005668',
     'clientID' => 'ssewwqzbrZlnOpumz',
     'appSecret' => 'vJL1w2NzskCU9yqRaO5oFvKXgu7DRhaP',
-    'redirectUri' => 'http://lanyinbin.cn/aa/callBack',
 ]);
 //订单计费
 //var_dump($config->openCitiesLists([]));
