@@ -25,7 +25,7 @@ class GoodTypeEnums
         return [
             self::INT_1 => '文件',
             self::INT_3 => '数码',
-            self::INT_5 => '蛋糕',
+            self::INT_5 => '蛋糕 ',
             self::INT_6 => '餐饮',
             self::INT_7 => '鲜花',
             self::INT_9 => '汽配',
