@@ -82,7 +82,7 @@ class Api extends Request
      * @return array
      * @throws Exception
      */
-    public function abortOrder(string $issOrderNo,bool $deductFlag = false): array
+    public function abortOrder(string $issOrderNo, bool $deductFlag = false): array
     {
         $place = new OrderPlace();
         $place->check(['issOrderNo' => $issOrderNo]);
@@ -97,9 +97,40 @@ class Api extends Request
      * @return array
      * @throws Exception
      */
-    public function confirmGoodsReturn(string $issOrderNo): array{
+    public function confirmGoodsReturn(string $issOrderNo): array
+    {
         $place = new OrderPlace();
         $place->check(['issOrderNo' => $issOrderNo]);
         return $this->post('/openapi/merchants/v5/confirmGoodsReturn', $place->jsonSerialize());
+    }
+
+    /**
+     * 订单详情
+     * @param string $issOrderNo 订单号
+     * @param string $thirdOrderNo 流水号
+     * @return array
+     * @throws Exception
+     */
+    public function orderInfo(string $issOrderNo,string $thirdOrderNo): array
+    {
+        $place = new OrderPlace();
+        $place->check(['issOrderNo' => $issOrderNo]);
+        $data = $place->jsonSerialize();
+        $data['thirdOrderNo'] = $thirdOrderNo;
+        return $this->post('/openapi/merchants/v5/orderInfo',$data);
+    }
+
+    /**
+     * 查询闪送员位置信息
+     * @param string $issOrderNo 订单号
+     * @return array
+     * @throws Exception
+     */
+    public function courierInfo(string $issOrderNo): array
+    {
+        $place = new OrderPlace();
+        $place->check(['issOrderNo' => $issOrderNo]);
+        $data = $place->jsonSerialize();
+        return $this->post('/openapi/merchants/v5/courierInfo',$data);
     }
 }
