@@ -2,6 +2,9 @@
 
 namespace Lxo\Sansong\Enums;
 
+/**
+ * 物品类型枚举类
+ */
 class GoodTypeEnums
 {
     const INT_1 = 1;

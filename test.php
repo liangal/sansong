@@ -1,5 +1,9 @@
 <?php
 require_once 'vendor/autoload.php';
+$bac = 50;
+$key = 'INT_'.$bac.'_SUB_1';
+var_dump(\Liangal\Sansong\Enums\CallbackOrderStatusEnums::{$key});
+return 'abc';
 
 $config = new Liangal\Sansong\Api([
     'shopID' => '20000000000005668',
