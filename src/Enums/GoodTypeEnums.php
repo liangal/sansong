@@ -1,6 +1,6 @@
 <?php
 
-namespace Lxo\Sansong\Enums;
+namespace Liangal\Sansong\Enums;
 
 /**
  * 物品类型枚举类
