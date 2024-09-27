@@ -44,7 +44,7 @@ class Courier extends Validate
      * 骑手id
      * @var string
      */
-    public string $blacklisted = '';
+    public string $id = '';
     /**
      * 配送过程轨迹列表
      * @var array
