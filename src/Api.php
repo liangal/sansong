@@ -88,7 +88,7 @@ class Api extends Request
         $place->check(['issOrderNo' => $issOrderNo]);
         $data = $place->jsonSerialize();
         $data['deductFlag'] = $deductFlag;
-        return $this->post('/openapi/merchants/v5/preAbortOrder', $data);
+        return $this->post('/openapi/merchants/v5/abortOrder', $data);
     }
 
     /**
