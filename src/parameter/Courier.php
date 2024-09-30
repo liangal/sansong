@@ -5,6 +5,8 @@ namespace Liangal\Sansong\parameter;
 class Courier extends Validate
 {
     use JsonSerialTrait;
+    protected array $necessary = [];
+
     /**
      * 闪送员位置纬度（百度坐标系）
      * @var string
